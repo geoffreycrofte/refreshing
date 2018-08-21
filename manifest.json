@@ -14,7 +14,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["https://vserver-eddie/*", "http://vserver-eddie/*"],
+            "matches": ["*://*/", "<all_urls>"],
             "js": ["setData.js","jquery.js","main.js"],
             "css": [ "main.css"]
         }
