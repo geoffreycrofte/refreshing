@@ -1,11 +1,28 @@
-.refrecsser-message {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    padding: 12px;
-    font-size: 18px;
-    background-color: rgba(0,110,0,.8);
-    color: white;
-    text-align: center; 
-    z-index: 999999;
+.juizy-css-live-reload-message {
+	display: block !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 24px !important;
+    margin: 0 !important;
+    border: 0 none!important;
+    font-family: sans-serif !important;
+    font-size: 18px !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-align: center !important; 
+    background-color: #86AF49 !important;
+    z-index: 9999999 !important;
+    box-shadow: 0 -16px 16px -16px rgba(0,0,0,.2) !important;
+    border-radius: 0 !important;
+    text-shadow: 0 0 6px rgba(0,0,0,0.3)!important;
+}
+
+.juizy-css-live-reload-message.byebye {
+	transition: all .650s!important;
+	transform: translateY(100%)!important;
+	opacity: 0!important;
 }

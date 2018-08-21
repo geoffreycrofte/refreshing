@@ -1,5 +1,4 @@
 var cssFiles = [],
-	styleBlock = [],
 	jsonData = [],
 	currentSiteOptions = {},
 	messageDisplayed = false,
@@ -30,10 +29,10 @@ $(document).ready(function(){
 			if ( currentSiteOptions.active === true ) {
 				if ( showMessageBool && !messageDisplayed ){
 					
-					$('body').append('<div class="refrecsser-message">Info: Rerescsser is running on this domain</div>');
+					$('body').append('<div class="juizy-css-live-reload-message">CSS Live Reload is running on this domain</div>');
 					
 					setTimeout( function(){ 
-						$(".refrecsser-message").fadeOut("slow"); 
+						$( '.juizy-css-live-reload-message' ).addClass( 'byebye' ); 
 					}, 4000 ); 
 
 					messageDisplayed = true;
@@ -49,8 +48,11 @@ $(document).ready(function(){
 
 	function getCssFiles( currentSiteOptions, checkCSS ){
 		if ( checkCSS ) {
-			$( '[rel]' ).each(function() {
+			// Links part.
+			$( 'link[rel="stylesheet"], link:not([rel])[href*=".css"]' ).each(function() {
+				console.log(this);
 				$data = $(this).attr('href');
+
 				if ( $data.indexOf('css') > -1 || $data.indexOf('style') > -1 ) {
 					cssFiles.push( getCSSFileName( $(this).attr('href') ) );
 				}
@@ -151,8 +153,8 @@ $(document).ready(function(){
 		return { 
 			'domain'      : currentTab,
 			'active'      : false,
-			'refreshRate' : 500,
-			'bufferSize'  : 3
+			'refreshRate' : 1500,
+			'bufferSize'  : 1
 		};
 	}
 
