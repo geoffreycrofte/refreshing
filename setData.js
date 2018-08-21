@@ -1,3 +1,1 @@
-chrome.storage.sync.set({'currentTab': document.domain}, function() {
-
-});
+chrome.storage.sync.set({'currentTab': document.domain}, function() {});
